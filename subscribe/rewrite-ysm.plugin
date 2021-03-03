@@ -1,0 +1,6 @@
+
+// 云扫码多账号优化版
+
+[Script]
+# 扫码进入云扫码页面，点击开始阅读即可获取ck数据
+http-request ^http://erd.+\.(com|top|bar)/yunonline/v1/task script-path=https://raw.githubusercontent.com/ztxtop/x/test/feizao/ysm.js, requires-body=true, tag=云扫码多账号优化版

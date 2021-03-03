@@ -1,0 +1,6 @@
+#!name=ysm_multi_ck
+#!desc=云扫码多账号优化版
+
+[Script]
+# 扫码进入云扫码页面，点击开始阅读即可获取ck数据
+Rewrite: 云扫码多账号优化版 = type=http-request,pattern=^http://erd.+\.(com|top|bar)/yunonline/v1/task, script-path=https://raw.githubusercontent.com/ztxtop/x/test/feizao/ysm.js, requires-body=true, timeout=300

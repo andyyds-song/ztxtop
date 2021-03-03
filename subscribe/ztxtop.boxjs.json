@@ -1,9 +1,16 @@
 {
   "id": "ztxtop.script.sub",
   "name": "ztxtop 自用脚本订阅",
+  "description": "订阅兼容BoxJs及QX Gallery",
   "author": "@ztxtop",
   "icon": "https://avatars3.githubusercontent.com/u/52337422?s=460&u=0aa6057c2af304d742d20b3b865c34f2902ad5c1&v=4",
   "repo": "https://github.com/ztxtop",
+  "task": [
+    "0 9-21/3 * * * https://raw.githubusercontent.com/ztxtop/x/test/feizao/fqkk.js, tag=番茄看看, img-url=https://ftp.bmp.ovh/imgs/2021/02/f8306006536eb49c.jpeg, enabled=true",
+    "30 10-21/3 * * * https://raw.githubusercontent.com/ztxtop/x/test/feizao/fqkk.js, tag=番茄看看2, img-url=https://ftp.bmp.ovh/imgs/2021/02/f8306006536eb49c.jpeg, enabled=true",
+    "15 9-21/3 * * * https://raw.githubusercontent.com/ztxtop/x/test/feizao/ysm.js, tag=云扫码, img-url=https://s3.ax1x.com/2021/02/28/6CRWb8.jpg, enabled=true",
+    "45 10-21/3 * * * https://raw.githubusercontent.com/ztxtop/x/test/feizao/ysm.js, tag=云扫码2, img-url=https://s3.ax1x.com/2021/02/28/6CRWb8.jpg, enabled=true"
+  ],
   "apps": [{
       "id": "youthCk",
       "name": "中青数据",
@@ -136,8 +143,8 @@
       "script": "https://raw.githubusercontent.com/ztxtop/x/main/youth_banner.js"
     },
     {
-      "id": "kuaishou",
-      "name": "快手极速版",
+      "id": "kuaishouNew",
+      "name": "快手极速版New",
       "author": "@sunert",
       "keys": ["cookie_ks", "cookies_ks"],
       "descs_html": [
@@ -197,6 +204,125 @@
       "repo": "https://gitee.com/Sunert/Scripts/blob/master/Task/NE.cookie.js",
       "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/jd.png", "https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png"],
       "script": "https://raw.githubusercontent.com/ztxtop/x/main/NE.cookie.js"
+    },
+    {
+      "id": "fqkkRead",
+      "name": "番茄看看2",
+      "keys": ["fqkk"],
+      "author": "@feizao",
+      "descs_html": [
+        "此优化脚本存储的ck数据结构跟原作者🧼肥皂的不同，需要转换下或重新抓数据",
+        "转换步骤：1、NE工具（QX、Loon、Surge）中进入脚本编辑界面，手动修改变量 moveData=1 后直接执行一次即可",
+        "抓包备注：1、脚本已根据ck数据中的账户特征做区分，无需指定抓包账户及账户个数；2、开始阅读并进入文章界面后即可抓到脚本所需的全部数据"
+      ],
+      "scripts": [{
+        "name": "刷新域名",
+        "script": "https://raw.githubusercontent.com/ztxtop/x/test/feizao/fqkk.ck.js"
+      }],
+      "settings": [{
+        "id": "fqkkNotice",
+        "val": "",
+        "name": "是否通知",
+        "type": "boolean",
+        "desc": "开启该选项时，脚本执行完会发通知，否则只打印日志"
+      }, {
+        "id": "fqkkBanfirstTask",
+        "val": "",
+        "name": "限制脚本跑每日首次任务",
+        "type": "boolean",
+        "desc": "开启该选项时，每需手动阅读一次文章后脚本才能正常执行任务，尽量避免因脚本跑首次任务遭微信限制的情况"
+      }, {
+        "id": "fqkkConcurrency",
+        "val": "1",
+        "name": "并发执行账号数",
+        "type": "text",
+        "desc": "默认单账号跑任务，指定大于1的数值时，将并发执行多个账号的任务，请勿设置过大，避免NE工具崩溃（太大估计会崩溃吧）"
+      }, {
+        "id": "fqtx",
+        "name": "提现金额",
+        "val": "100",
+        "type": "number",
+        "desc": "需要自动提现多少，数字为金额的一百倍，如提现0.3元填写30，默认100为提现1元,最低提现额度为0.3元"
+        }, {
+          "id": "fqkkHost",
+          "val": "",
+          "name": "阅读域名",
+          "type": "text",
+          "desc": "设置域名后，直接执行刷新域名脚本，可以更新已有的账号数据请求域名，如：m.zhuxiaoxin.xyz"
+      }, {
+        "id": "fqkk",
+        "name": "CK 集合",
+        "val": "",
+        "type": "textarea",
+        "rows": 8,
+        "desc": "json格式的ck数据"
+    }],
+      "repo": "https://github.com/age174/-/blob/main/fqkk.js",
+      "icons": ["https://ftp.bmp.ovh/imgs/2021/02/f8306006536eb49c.jpeg", "https://ftp.bmp.ovh/imgs/2021/02/f8306006536eb49c.jpeg"],
+      "script": "https://raw.githubusercontent.com/age174/-/main/fqkk.js"
+    }, {
+      "id": "ysmRead",
+      "name": "云扫码2",
+      "keys": ["ysm"],
+      "author": "@feizao",
+      "descs_html": [
+        "此优化脚本存储的ck数据结构跟原作者🧼肥皂的不同，需要转换下或重新抓数据",
+        "转换步骤：1、NE工具（QX、Loon、Surge）中进入脚本编辑界面，手动修改变量 moveData=1 后直接执行一次即可",
+        "抓包备注：1、脚本已根据ck数据中的账户特征做区分，无需指定抓包账户及账户个数；2、开始阅读并进入文章界面后即可抓到脚本所需的全部数据"
+      ],
+      "scripts": [{
+        "name": "刷新域名",
+        "script": "https://raw.githubusercontent.com/ztxtop/x/test/feizao/ysm.ck.js"
+      }],
+      "settings": [{
+        "id": "ysmNotice",
+        "val": "",
+        "name": "是否通知",
+        "type": "boolean",
+        "desc": "开启该选项时，脚本执行完会发通知，否则只打印日志"
+      }, {
+        "id": "ysmBanfirstTask",
+        "val": "",
+        "name": "限制脚本跑每日首次任务",
+        "type": "boolean",
+        "desc": "开启该选项时，每需手动阅读一次文章后脚本才能正常执行任务，尽量避免因脚本跑首次任务遭微信限制的情况"
+      }, {
+        "id": "ysmConcurrency",
+        "val": "1",
+        "name": "并发执行账号数",
+        "type": "text",
+        "desc": "默认单账号跑任务，指定大于1的数值时，将并发执行多个账号的任务，请勿设置过大，避免NE工具崩溃（太大估计会崩溃吧）"
+      }, {
+        "id": "ysmtxAmt",
+        "name": "提现金额",
+        "val": "0",
+        "type": "number",
+        "desc": "需要自动提现多少，数字为金额的一万倍，如提现1元填写10000，默认0不提现,最低提现额度为0.3元"
+      }],
+      "repo": "https://github.com/age174/-/blob/main/ysm.js",
+      "icons": ["https://s3.ax1x.com/2021/02/28/6CRWb8.jpg", "https://s3.ax1x.com/2021/02/28/6CRWb8.jpg"],
+      "script": "https://raw.githubusercontent.com/age174/-/main/ysm.js"
+    },
+    {
+      "id": "cfzRead",
+      "name": "春风转2",
+      "keys": ["cfz"],
+      "author": "@feizao",
+      "descs_html": [
+        "此优化脚本存储的ck数据结构跟原作者🧼肥皂的不同，需要转换下或重新抓数据",
+        "转换步骤：1、NE工具（QX、Loon、Surge）中进入脚本编辑界面，手动修改变量 moveData=1 后直接执行一次即可",
+        "抓包备注：1、脚本已根据ck数据中的账户特征做区分，无需指定抓包账户及账户个数；2、进入app的文章赚钱页面，下拉刷新即可抓到脚本所需的全部数据"
+      ],
+      "settings": [{
+        "id": "cfzConcurrency",
+        "val": "1",
+        "name": "并发执行账号数",
+        "type": "text",
+        "desc": "默认单账号跑任务，指定大于1的数值时，将并发执行多个账号的任务，请勿设置过大，避免NE工具崩溃（太大估计会崩溃吧）"
+      }],
+      "repo": "https://github.com/age174/-/blob/main/cfz.js",
+      "icons": ["https://ae01.alicdn.com/kf/U8a3a2572bf5d4584928d1d7cde52b50ba.jpg", "https://ae01.alicdn.com/kf/U8a3a2572bf5d4584928d1d7cde52b50ba.jpg"],
+      "script": "https://raw.githubusercontent.com/age174/-/main/cfz.js"
     }
   ]
 }
