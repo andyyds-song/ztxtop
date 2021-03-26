@@ -323,6 +323,29 @@
       "repo": "https://github.com/age174/-/blob/main/cfz.js",
       "icons": ["https://ae01.alicdn.com/kf/U8a3a2572bf5d4584928d1d7cde52b50ba.jpg", "https://ae01.alicdn.com/kf/U8a3a2572bf5d4584928d1d7cde52b50ba.jpg"],
       "script": "https://raw.githubusercontent.com/age174/-/main/cfz.js"
+    },
+    {
+      "id": "yqzhRead",
+      "name": "悦趣赚2",
+      "keys": ["yqzh"],
+      "author": "@ztxtop",
+      "settings": [{
+        "id": "yqzhConcurrency",
+        "val": "1",
+        "name": "并发执行账号数",
+        "type": "text",
+        "desc": "默认单账号跑任务，指定大于1的数值时，将并发执行多个账号的任务，请勿设置过大，避免NE工具崩溃（太大估计会崩溃吧）"
+      }, {
+        "id": "yqzh",
+        "name": "CK 集合",
+        "val": "",
+        "type": "textarea",
+        "rows": 8,
+        "desc": "json格式的ck数据"
+    }],
+      "repo": "https://github.com/age174/-/blob/main/yqzh.js",
+      "icons": ["https://ae01.alicdn.com/kf/U8a3a2572bf5d4584928d1d7cde52b50ba.jpg", "https://ae01.alicdn.com/kf/U8a3a2572bf5d4584928d1d7cde52b50ba.jpg"],
+      "script": "https://raw.githubusercontent.com/age174/-/main/yqzh.js"
     }
   ]
 }
